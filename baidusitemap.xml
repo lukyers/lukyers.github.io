@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://zbin.cc/2016/08/02/%E5%A4%87%E4%BB%BDHexo%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2016-08-02T03:09:06.562Z</lastmod>
+    <data>
+        <display>
+        <title>备份Hexo文章</title>
+        <pubTime>2016-08-02T03:09:06.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+  <url>
+    <loc>http://zbin.cc/2016/07/22/Vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E9%94%90%E9%80%9F%E5%8A%A0%E9%80%9F%E5%99%A8/</loc>
+    <lastmod>2016-08-02T02:53:32.578Z</lastmod>
+    <data>
+        <display>
+        <title>Vultr服务器使用锐速加速器</title>
+        <pubTime>2016-07-22T06:01:22.000Z</pubTime>
+        
+        <tag>HTTPS代理</tag>
+         
+        <tag>VPN加速</tag>
+         
+        <tag>锐速</tag>
+         
+        <tag>Vultr VPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://zbin.cc/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zbin.cc/2016/06/23/%E4%BD%BF%E7%94%A8Squid%E6%90%AD%E5%BB%BAHTTPS%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2016-08-02T02:53:32.578Z</lastmod>
+    <data>
+        <display>
+        <title>使用Squid搭建HTTPS代理服务器</title>
+        <pubTime>2016-06-23T08:03:36.000Z</pubTime>
+        
+        <tag>HTTPS代理</tag>
+         
+        <tag>翻墙</tag>
+         
+        <tag>VPN</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://zbin.cc/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
