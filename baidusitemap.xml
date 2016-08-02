@@ -4,15 +4,20 @@
 
     
   <url>
-    <loc>http://zbin.cc/2016/08/02/%E5%A4%87%E4%BB%BDHexo%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2016-08-02T03:09:06.562Z</lastmod>
+    <loc>http://zbin.cc/2016/08/02/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E5%8A%9F%E8%83%BD/</loc>
+    <lastmod>2016-08-02T09:25:40.136Z</lastmod>
     <data>
         <display>
-        <title>备份Hexo文章</title>
+        <title>为Hexo博客添加自动备份功能</title>
         <pubTime>2016-08-02T03:09:06.000Z</pubTime>
         
+        <tag>Hexo博客自动备份</tag>
+         
          
            
+             
+              <breadCrumb title="Blog" url="http://zbin.cc/categories/Blog/"/>
+          
         </display>
     </data>
     </url>

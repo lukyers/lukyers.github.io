@@ -283,8 +283,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/02/备份Hexo文章/" itemprop="url">
-                  备份Hexo文章
+                <a class="post-title-link" href="/2016/08/02/为Hexo博客添加自动备份功能/" itemprop="url">
+                  为Hexo博客添加自动备份功能
                 </a>
               
             
@@ -303,13 +303,32 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/02/备份Hexo文章/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/备份Hexo文章/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/为Hexo博客添加自动备份功能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/为Hexo博客添加自动备份功能/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,7 +338,7 @@
 
           
           
-             <span id="/2016/08/02/备份Hexo文章/" class="leancloud_visitors" data-flag-title="备份Hexo文章">
+             <span id="/2016/08/02/为Hexo博客添加自动备份功能/" class="leancloud_visitors" data-flag-title="为Hexo博客添加自动备份功能">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -343,7 +362,16 @@
       
         
           
-            
+            <h2 id="为Hexo博客添加自动备份功能"><a href="#为Hexo博客添加自动备份功能" class="headerlink" title="为Hexo博客添加自动备份功能"></a>为Hexo博客添加自动备份功能</h2><p>Hexo博客作为一个简单方便的个人博客框架很适合开发者使用，但是如果换了电脑想更新博客文章就需要费一些事了。之前自己的解决方案是手动把文件添加的github上，但是每次都需要hexo deploy后手动输入git push，有时候忘记了就会有问题，最近看到网上有用js写的脚本来实现每次调用deploy后自动进行上传备份，经测试后发现这个功能确实有效。</p>
+<hr>
+<h4 id="1-安装shelljs"><a href="#1-安装shelljs" class="headerlink" title="1 安装shelljs"></a>1 安装shelljs</h4><p>实现自动备份功能需要安装一个NodeJs的一个<code>shelljs</code>模块，该模块可以使调用系统命令更加方便。</p>
+<p>在Hexo根目录下键入以下命令来安装<code>shelljs</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save shelljs</div></pre></td></tr></table></figure>
+<h4 id="2-编写自动备份脚本"><a href="#2-编写自动备份脚本" class="headerlink" title="2 编写自动备份脚本"></a>2 编写自动备份脚本</h4><p>在Hexo根目录下新建<code>script</code>目录，然后新建后缀名为<code>.js</code>的文件，名字可以随意起，比如<code>backup.js</code></p>
+<p>脚本内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'shelljs/global'</span>);</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	hexo.on(<span class="string">'deployAfter'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//当deploy完成后执行备份</span></div><div class="line">		run();</div><div class="line">	&#125;);</div><div class="line">&#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"产生了一个错误&lt;(￣3￣)&gt; !，错误详情为："</span> + e.toString());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (!which(<span class="string">'git'</span>)) &#123;</div><div class="line">		echo(<span class="string">'Sorry, this script requires git'</span>);</div><div class="line">		exit(<span class="number">1</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		echo(<span class="string">"======================Auto Backup Begin==========================="</span>);</div><div class="line">		cd(<span class="string">'D:/hexo'</span>);    <span class="comment">//此处修改为Hexo根目录路径</span></div><div class="line">		<span class="keyword">if</span> (exec(<span class="string">'git add --all'</span>).code !== <span class="number">0</span>) &#123;</div><div class="line">			echo(<span class="string">'Error: Git add failed'</span>);</div><div class="line">			exit(<span class="number">1</span>);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (exec(<span class="string">'git commit -am "Form auto backup script\'s commit"'</span>).code !== <span class="number">0</span>) &#123;</div><div class="line">			echo(<span class="string">'Error: Git commit failed'</span>);</div><div class="line">			exit(<span class="number">1</span>);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">      	<span class="comment">//如果Git远程仓库名称不是origin的话,修改为自己的远程仓库名字即可</span></div><div class="line">		<span class="keyword">if</span> (exec(<span class="string">'git push origin master'</span>).code !== <span class="number">0</span>) &#123;</div><div class="line">			echo(<span class="string">'Error: Git push failed'</span>);</div><div class="line">			exit(<span class="number">1</span>);</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		echo(<span class="string">"==================Auto Backup Complete============================"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>保存脚本并退出，然后就可以新建文章了，最后执行<code>hexo deploy</code>命令后，脚本就会在deploy完成后自动调用push指令了: )。</p>
+
           
         
       
@@ -695,7 +723,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
