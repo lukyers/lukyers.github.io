@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://zbin.cc/2016/07/22/Vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E9%94%90%E9%80%9F%E5%8A%A0%E9%80%9F%E5%99%A8/</loc>
+    <lastmod>2016-08-19T10:33:56.472Z</lastmod>
+    <data>
+        <display>
+        <title>Vultr服务器使用锐速加速器</title>
+        <pubTime>2016-07-22T06:01:22.000Z</pubTime>
+        
+        <tag>HTTPS代理</tag>
+         
+        <tag>VPN加速</tag>
+         
+        <tag>锐速</tag>
+         
+        <tag>Vultr VPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://zbin.cc/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zbin.cc/2016/08/02/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2016-08-05T11:26:17.001Z</lastmod>
     <data>
@@ -39,32 +65,6 @@
         <tag>翻墙</tag>
          
         <tag>VPN</tag>
-         
-         
-           
-             
-              <breadCrumb title="Blog" url="http://zbin.cc/categories/Blog/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zbin.cc/2016/07/22/Vultr%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E9%94%90%E9%80%9F%E5%8A%A0%E9%80%9F%E5%99%A8/</loc>
-    <lastmod>2016-08-02T02:53:32.578Z</lastmod>
-    <data>
-        <display>
-        <title>Vultr服务器使用锐速加速器</title>
-        <pubTime>2016-07-22T06:01:22.000Z</pubTime>
-        
-        <tag>HTTPS代理</tag>
-         
-        <tag>VPN加速</tag>
-         
-        <tag>锐速</tag>
-         
-        <tag>Vultr VPS</tag>
          
          
            

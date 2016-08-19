@@ -112,7 +112,7 @@ sudo apt-cache search linux-image">
 <meta property="og:description" content="Vultr服务器安装锐速加速器1. 更换内核Vultr自带的Ubuntu14.04.4的内核版本是3.13.0-91-generic，不在锐速支持内核列表里，所以我们需要手工更换内核。首先，搜索可下载的内核
 
 sudo apt-cache search linux-image">
-<meta property="og:updated_time" content="2016-08-02T02:53:32.578Z">
+<meta property="og:updated_time" content="2016-08-19T10:33:56.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vultr服务器使用锐速加速器">
 <meta name="twitter:description" content="Vultr服务器安装锐速加速器1. 更换内核Vultr自带的Ubuntu14.04.4的内核版本是3.13.0-91-generic，不在锐速支持内核列表里，所以我们需要手工更换内核。首先，搜索可下载的内核
@@ -381,6 +381,7 @@ sudo apt-cache search linux-image">
 </blockquote>
 <p>这里的xx是上一步中看到的在服务器上安装的其他内核，注意如果当前服务器安装的不是最新的内核，卸载的同时会给服务器安装最新内核；为了能让服务器使用锐速支持的3.13.0-46-generic内核，我们还要再执行一次这个命令，把安装的最新内核卸载掉。</p>
 <p>安装完毕后就可以重启服务器了<code>reboot</code>，之后可以使用<code>uname -r</code>来查看所需版本的内核是否安装成功。</p>
+<p>然后需要更新一下引导文件<code>sudo update-grub</code> </p>
 <h4 id="2-安装锐速破解版"><a href="#2-安装锐速破解版" class="headerlink" title="2. 安装锐速破解版"></a>2. 安装锐速破解版</h4><p>内核安装完毕后，锐速的安装就很简单了，只需要执行以下命令即可（破解版）：</p>
 <blockquote>
 <p>wget -N –no-check-certificate <a href="https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh" target="_blank" rel="external">https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh</a> &amp;&amp; bash serverspeeder-all.sh</p>
